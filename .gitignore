@@ -1,3 +1,3 @@
-auth/node_modules
-
+node_modules
+client/.next
 .secret.txt
