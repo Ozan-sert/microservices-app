@@ -33,15 +33,15 @@ const start = async () => {
     });
     process.on("SIGINT", () => natsWrapper.client.close());
     process.on("SIGTERM", () => natsWrapper.client.close());
+  
+    new OrderCreatedListener(natsWrapper.client).listen();
+    new OrderCancelledListener(natsWrapper.client).listen();
 
     await mongoose.connect(process.env.MONGO_URI, {});
     console.log("Connected to MongoDb");
   } catch (err) {
     console.error(err);
   }
-  
-  new OrderCreatedListener(natsWrapper.client).listen();
-  new OrderCancelledListener(natsWrapper.client).listen();
 
   app.listen(3000, () => {
     console.log("Listening on port 3000!!!!!!!!");
