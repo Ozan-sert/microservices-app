@@ -5,13 +5,13 @@ const BuildClient = ({ req }) => {
     // We are on the server
 
     return axios.create({
-      baseUrl: 'http://www.supportsysapp.xyz',
+      baseURL: 'http://www.supportsysapp.xyz',
       headers: req.headers,
     });
   } else {
     // We must be on the browser
     return axios.create({
-      baseUrl: '/',
+      baseURL: '/',
     });
   }
 };
