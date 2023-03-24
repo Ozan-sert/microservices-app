@@ -3,14 +3,14 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      - ./infra/k8s/*
+      - ./infra/k8s-dev/*
 build:
 #  local:
 #    push: false
   googleCloudBuild:
-    projectId: microservice-app-380807
+    projectId: microservice-app-381510
   artifacts:
-    - image: us.gcr.io/microservice-app-380807/auth
+    - image: us.gcr.io/microservice-app-381510/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -18,7 +18,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: us.gcr.io/microservice-app-380807/tickets
+    - image: us.gcr.io/microservice-app-381510/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile
@@ -26,7 +26,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: us.gcr.io/microservice-app-380807/orders
+    - image: us.gcr.io/microservice-app-381510/orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -34,7 +34,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: us.gcr.io/microservice-app-380807/expiration
+    - image: us.gcr.io/microservice-app-381510/expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -42,7 +42,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: us.gcr.io/microservice-app-380807/payments
+    - image: us.gcr.io/microservice-app-381510/payments
       context: payments
       docker:
         dockerfile: Dockerfile
@@ -50,7 +50,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: us.gcr.io/microservice-app-380807/client 
+    - image: us.gcr.io/microservice-app-381510/client 
       context: client
       docker:
         dockerfile: Dockerfile

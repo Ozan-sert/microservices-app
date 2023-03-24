@@ -16,10 +16,10 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd tickets && docker build -t cygnetops/tickets .
-      - run: docker push cygnetops/tickets
+      - run: cd tickets && docker build -t buozzy/tickets .
+      - run: docker push buozzy/tickets
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - run: doctl kubernetes cluster kubeconfig save ticketing
+      - run: doctl kubernetes cluster kubeconfig save microservice-app
       - run: kubectl rollout restart deployment tickets-depl
