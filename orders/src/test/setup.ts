@@ -13,7 +13,7 @@ beforeAll(async () => {
   process.env.JWT_KEY = "asdfasdf";
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-  const mongo = await MongoMemoryServer.create();
+  mongo = await MongoMemoryServer.create();
   const mongoUri = mongo.getUri();
 
   await mongoose.connect(mongoUri, {});
@@ -32,7 +32,7 @@ afterAll(async () => {
   if (mongo) {
     await mongo.stop();
   }
-  await mongoose.connection.close();
+  mongoose.connection.close();
 });
 
 global.signin = () => {
