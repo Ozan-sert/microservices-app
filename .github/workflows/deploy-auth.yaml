@@ -15,9 +15,9 @@ jobs:
       - run: cd auth && docker build -t buozzy/auth .
       - uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
+          username: Buozzy
+          password: Osert1223
+
       - run: docker push buozzy/auth
       - uses: digitalocean/action-doctl@v2
         with:
