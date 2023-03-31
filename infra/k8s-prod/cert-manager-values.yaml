@@ -1,4 +1,0 @@
-installCRDs : false
-
-prometheus:
-  enable: false
