@@ -1,12 +1,12 @@
 # TicketHUB - Marketplace for selling and buying tickets
- >    Tickethub is a microservice-based marketplace website for buying and selling event tickets. It is built with Typescript, React, and MongoDB, and uses Docker and Kubernetes for containerization and deployment.
+   Tickethub is a microservice-based marketplace website for buying and selling event tickets. It is built with Typescript, React, and MongoDB, and uses Docker and Kubernetes for containerization and deployment.
  
  
- >    The application is a marketplace for buying and selling event tickets. It's composed of several microservices that interact with each other through HTTP requests and message broker (NATS streaming server). Each microservice is responsible for a specific domain within the application, such as user authentication, ticket creation, order management, and so on.
+   The application is a marketplace for buying and selling event tickets. It's composed of several microservices that interact with each other through HTTP requests and message broker (NATS streaming server). Each microservice is responsible for a specific domain within the application, such as user authentication, ticket creation, order management, and so on.
  
    ## [Live Demo](https://www.ticketingapp.website/)
  
- #  Architecture
+ ##  Architecture
 The application is built with a microservices architecture pattern. Each microservice is an independent application that can be deployed, scaled, and maintained independently. The microservices communicate with each other through HTTP requests and message broker.
 
 
@@ -19,32 +19,34 @@ The following microservices are part of the application:
 - **Payments**: Handles payment processing and emits payment completed events
 - **Client**: Frontend application built with Next.js and React that consumes the APIs exposed by the microservices
 
-# Technologies Used
+## Features
+
+- Typescript is used to write the server-side code, ensuring type safety and better error handling.
+- MongoDB is used as the primary database for the application, providing a scalable and flexible document-based data store.
+- Redis is used for caching and optimizing database queries for improved performance.
+- GitHub Actions is used to automate the testing and deployment of the application.
+- Automated tests are run on each code push, ensuring code quality and preventing regressions.
+- The application is deployed to a DigitalOcean cluster using Kubernetes, enabling easy scaling and management of the application.
+- A Let's Encrypt certificate is used for SSL/TLS encryption, ensuring secure communication between the client and the server.
+## Technologies Used
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
 ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
 
- #  Getting started
- 
- ## Prerequisites
-Before running the application, you need to have the following software installed:
 
-- Docker
-- Kubernetes (or a managed Kubernetes service like GKE, EKS, or AKS)
-- Skaffold
-- NATS streaming server
 
 # Installation
  
 
-## Running on Google Cloud Platform
+### Running on Google Cloud Platform
 
 [![GCP Badge](https://img.shields.io/badge/-Google_Cloud-4285F4?style=flat&logo=googlecloud&logoColor=white)](https://cloud.google.com/gcp/)
 
@@ -109,7 +111,7 @@ skaffold dev
 
 19. open a web browser and enter your custom URL with `https://` to see this project come to life!
 
-## Running on Docker Desktop
+### Running on Docker Desktop
 
 [![Docker Badge](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
 
@@ -177,7 +179,7 @@ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=<YOUR_STRI
 kubectl create secret generic paypal-secret --from-literal=PAYPAL_CLIENT_ID=<YOUR_PAYPAL_CLIENT_ID>
 ```
 
-# Deployment
+## Deployment
 
 [(Back to top)](#table-of-contents)
 
