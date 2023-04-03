@@ -3,10 +3,13 @@
  
  
  >    The application is a marketplace for buying and selling event tickets. It's composed of several microservices that interact with each other through HTTP requests and message broker (NATS streaming server). Each microservice is responsible for a specific domain within the application, such as user authentication, ticket creation, order management, and so on.
+ 
+   ## [Live Demo](https://www.ticketingapp.website/)
+ 
  #  Architecture
 The application is built with a microservices architecture pattern. Each microservice is an independent application that can be deployed, scaled, and maintained independently. The microservices communicate with each other through HTTP requests and message broker.
 
-## [Live Demo](https://www.ticketingapp.website/)
+
 
 The following microservices are part of the application:
 - **Auth**: Handles user authentication and authorization
